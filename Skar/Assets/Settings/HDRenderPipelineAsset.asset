@@ -53,17 +53,24 @@ MonoBehaviour:
     supportSSR: 1
     supportSSAO: 1
     supportSubsurfaceScattering: 1
-    supportDBuffer: 0
+    supportForwardOnly: 0
+    supportDBuffer: 1
     supportMSAA: 0
-    supportAsyncCompute: 0
+    msaaSampleCount: 1
+    supportMotionVectors: 1
+    supportStereo: 0
     lightLoopSettings:
-      spotCookieSize: 128
+      cookieSize: 128
       cookieTexArraySize: 16
       pointCookieSize: 512
       cubeCookieTexArraySize: 16
       reflectionProbeCacheSize: 128
+      planarReflectionProbeCacheSize: 1024
       reflectionCubemapSize: 128
+      planarReflectionTextureSize: 128
       reflectionCacheCompressed: 0
+      planarReflectionCacheCompressed: 0
+      maxPlanarReflectionProbes: 128
       skyReflectionSize: 256
       skyLightingOverrideLayerMask:
         serializedVersion: 2
@@ -71,5 +78,8 @@ MonoBehaviour:
     shadowInitParams:
       shadowAtlasWidth: 4096
       shadowAtlasHeight: 4096
+    decalSettings:
+      drawDistance: 1000
+      atlasSize: 8192
   diffusionProfileSettings: {fileID: 11400000, guid: 26bdddf49760c61438938733f07fa2a2,
     type: 2}
