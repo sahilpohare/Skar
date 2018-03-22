@@ -90,7 +90,7 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 1
-    value: 8
+    value: -10
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -120,13 +120,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 1, y: 0.77086747, z: 0.9649668, w: 0.1875}
   gamma:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 0.7009653, y: 1, z: 0.80241674, w: 0.125}
   gain:
     overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    value: {x: 0.67702734, y: 0.8203926, z: 1, w: 0.0625}
   masterCurve:
     overrideState: 0
     value:
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f6f3f7c722b4544b97e3c75840aa33, type: 3}
   m_Name: AutoExposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -369,16 +369,16 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 2.4
+    value: 70.6
   aperture:
-    overrideState: 0
-    value: 5.6
+    overrideState: 1
+    value: 0.05
   focalLength:
     overrideState: 1
-    value: 34
-  kernelSize:
-    overrideState: 0
     value: 1
+  kernelSize:
+    overrideState: 1
+    value: 3
 --- !u!114 &114766690986127606
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -447,16 +447,16 @@ MonoBehaviour:
     value: 1.25
   threshold:
     overrideState: 1
-    value: 0.9
+    value: 0.64
   softKnee:
     overrideState: 0
     value: 0.5
   diffusion:
     overrideState: 1
-    value: 8
+    value: 9
   anamorphicRatio:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   color:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
