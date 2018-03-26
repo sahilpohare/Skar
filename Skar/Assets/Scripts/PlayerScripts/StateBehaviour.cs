@@ -17,7 +17,7 @@ public class StateBehaviour : StateMachineBehaviour {
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{   
 		foreach(doAtTime action in doatTime){
-			if(action.time == (stateInfo.normalizedTime)){
+			if(action.time > (stateInfo.normalizedTime)){
 				Debug.Log("Done");
 				action.DoThis.Invoke();
 			}else{
