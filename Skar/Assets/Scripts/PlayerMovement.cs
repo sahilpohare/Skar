@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace Skar{
 public class PlayerMovement : MonoBehaviour {
-
+    
+    public StatesManager states;
     public float speed = 5;
     public float jumpForce = 10;
     public float rotationSpeed = 15;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour {
         V_camAnchor.position = transform.position;
         rigidbody = GetComponent<Rigidbody>();
         playerCollider = GetComponentInChildren<CapsuleCollider>();
+        states = GetComponent<StatesManager>();
     }
 
     private void Update()
@@ -37,9 +39,13 @@ public class PlayerMovement : MonoBehaviour {
         V_camAnchor.position = transform.position;
         RotateCamera(GetMouseMovement());
     }
-
-    private void FixedUpdate()
+    void FixedUpdate()
     {
+      Movements();    
+    }
+    private void Movements()
+    { 
+        if(states.Canmove){
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             GetMoveDirection(GetInput());
@@ -53,11 +59,11 @@ public class PlayerMovement : MonoBehaviour {
                 RotateToMoveDirection(moveDirection);
                 Move(moveDirection);
             }
+          }
         }
         Jump();
         Debug.Log(rigidbody.velocity.magnitude);
     }
-
     Vector2 GetInput()
     {
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -109,4 +115,5 @@ public class PlayerMovement : MonoBehaviour {
         V_camAnchor.Rotate(0, mouseInput.x, 0, Space.Self);
         H_camAnchor.Rotate(-mouseInput.y, 0, 0, Space.Self);
     }
+  }
 }
