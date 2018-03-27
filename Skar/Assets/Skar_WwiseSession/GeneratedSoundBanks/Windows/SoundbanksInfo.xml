@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" SchemaVersion="10" SoundbankVersion="112">
+	<RootPaths>
+		<ProjectRoot>D:\Presley\Work\Skar\Skar_WwiseSession\</ProjectRoot>
+		<SourceFilesRoot>D:\Presley\Work\Skar\Skar_WwiseSession\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Presley\Work\Skar\Skar_WwiseSession\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Presley\Work\Skar\Skar_WwiseSession\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2727318989" Language="SFX">
+			<ShortName>Test_1</ShortName>
+			<Path>Test_1.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3373521485" Name="Play_FS_Dirt"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="40646268" Language="SFX">
+					<ShortName>FS_Dirt_R_05.wav</ShortName>
+					<Path>SFX\FS_Dirt_R_05_DDC98EF4.wem</Path>
+				</File>
+				<File Id="278709900" Language="SFX">
+					<ShortName>FS_Dirt_R_01.wav</ShortName>
+					<Path>SFX\FS_Dirt_R_01_DDC98EF4.wem</Path>
+				</File>
+				<File Id="521723113" Language="SFX">
+					<ShortName>FS_Dirt_R_02.wav</ShortName>
+					<Path>SFX\FS_Dirt_R_02_DDC98EF4.wem</Path>
+				</File>
+				<File Id="552123626" Language="SFX">
+					<ShortName>FS_Dirt_R_03.wav</ShortName>
+					<Path>SFX\FS_Dirt_R_03_DDC98EF4.wem</Path>
+				</File>
+				<File Id="606611187" Language="SFX">
+					<ShortName>FS_Dirt_L_04.wav</ShortName>
+					<Path>SFX\FS_Dirt_L_04_DDC98EF4.wem</Path>
+				</File>
+				<File Id="718985986" Language="SFX">
+					<ShortName>FS_Dirt_L_05.wav</ShortName>
+					<Path>SFX\FS_Dirt_L_05_DDC98EF4.wem</Path>
+				</File>
+				<File Id="767605388" Language="SFX">
+					<ShortName>FS_Dirt_R_04.wav</ShortName>
+					<Path>SFX\FS_Dirt_R_04_DDC98EF4.wem</Path>
+				</File>
+				<File Id="964813075" Language="SFX">
+					<ShortName>FS_Dirt_L_03.wav</ShortName>
+					<Path>SFX\FS_Dirt_L_03_DDC98EF4.wem</Path>
+				</File>
+				<File Id="1025793749" Language="SFX">
+					<ShortName>FS_Dirt_L_02.wav</ShortName>
+					<Path>SFX\FS_Dirt_L_02_DDC98EF4.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
