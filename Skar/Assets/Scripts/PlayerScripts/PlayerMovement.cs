@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Skar;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour {
     Rigidbody rigidbody;
 
     CapsuleCollider playerCollider;
+    [SerializeField] Transform colliderCenter;
     public bool onGround;
     public bool midairControl;
 
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.drag = groundedDrag;
         playerCollider = GetComponentInChildren<CapsuleCollider>();
+        colliderCenter.localPosition = playerCollider.center;
     }
 
     private void FixedUpdate()
@@ -109,7 +112,7 @@ public class PlayerMovement : MonoBehaviour {
     void CheckGround()
     {
         RaycastHit hit;
-        if(Physics.SphereCast(transform.position, playerCollider.radius * (1 - advancedSettings_Access.shellOffset), Vector3.down, out hit, ((playerCollider.height/2) - playerCollider.radius) + advancedSettings_Access.groundCheckDistance, ~advancedSettings_Access.ignoredGrounds, QueryTriggerInteraction.Ignore))
+        if(Physics.SphereCast(colliderCenter.position, playerCollider.radius * (1 - advancedSettings_Access.shellOffset), Vector3.down, out hit, ((playerCollider.height/2) - playerCollider.radius) + advancedSettings_Access.groundCheckDistance, ~advancedSettings_Access.ignoredGrounds, QueryTriggerInteraction.Ignore))
         {
             onGround = true;
         }
