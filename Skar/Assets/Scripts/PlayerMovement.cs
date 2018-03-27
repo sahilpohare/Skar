@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Skar{
+[RequireComponent(typeof(StatesManager))]
 public class PlayerMovement : MonoBehaviour {
     
     [Serializable]
