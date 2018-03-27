@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour {
 	public bool M2;
 	public float mouseX;
 	public float mouseY;
-
+    public bool Jump;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,6 +23,7 @@ public class InputManager : MonoBehaviour {
 		mouseY = Input.GetAxis("Mouse Y");
 		M1 = Input.GetMouseButton(0);
 		M2 = Input.GetMouseButton(1);
+        Jump = Input.GetButtonDown("Jump");
 	}
 
    }
