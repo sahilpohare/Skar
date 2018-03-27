@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace Skar{
 public class InputManager : MonoBehaviour {
     public float Horizontal;
 	public float Vertical;
@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour {
 	public bool M2;
 	public float mouseX;
 	public float mouseY;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -24,4 +25,5 @@ public class InputManager : MonoBehaviour {
 		M2 = Input.GetMouseButton(1);
 	}
 
+   }
 }

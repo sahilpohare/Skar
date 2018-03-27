@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace Skar{
 public class Movement : MonoBehaviour {
     public bool _canMove;
 	public Rigidbody rb;
@@ -48,4 +48,5 @@ public class Movement : MonoBehaviour {
 
 		return (v+h).normalized;
 	}
+  }
 }

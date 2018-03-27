@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0
+  m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
+  m_IndirectSpecularColor: {r: 0.07875507, g: 0.07704143, b: 0.06676101, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -674,7 +674,11 @@ GameObject:
   - component: {fileID: 1608258505}
   - component: {fileID: 1608258504}
   - component: {fileID: 1608258508}
+<<<<<<< HEAD
   m_Layer: 10
+=======
+  m_Layer: 0
+>>>>>>> 38dd294644c9c3461a707e35022890d53f26501b
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,12 +696,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6228b195587a39a4d8f341c9731ba2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   advancedSettings_Access:
     shellOffset: 0.1
     groundCheckDistance: 0.06
     ignoredGrounds:
       serializedVersion: 2
       m_Bits: 0
+=======
+  states: {fileID: 0}
+>>>>>>> 38dd294644c9c3461a707e35022890d53f26501b
   speed: 5
   jumpForce: 10
   midAirJumps: 1
@@ -756,6 +764,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608258503}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 46e0d3795f6fed54ba9d23476cca114d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -767,6 +776,15 @@ MonoBehaviour:
   camera_X_Distance: 0
   camera_Y_Distance: 1
   camera_Z_Distance: -5
+=======
+  m_Script: {fileID: 11500000, guid: 65b9de43f48b3c8469930ae850569fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canmove: 0
+  isAttacking: 0
+  isGrounded: 0
+  GroundcheckOffset: {x: 0, y: 0, z: 0}
+>>>>>>> 38dd294644c9c3461a707e35022890d53f26501b
 --- !u!1 &1721840621
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,6 +813,65 @@ Transform:
   - {fileID: 1278362240}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1803900472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1803900475}
+  - component: {fileID: 1803900474}
+  - component: {fileID: 1803900473}
+  m_Layer: 0
+  m_Name: Scene Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1803900473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803900472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441482e8936e35048a1dffac814e3ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Profile: {fileID: 11400000, guid: ce720a739215a9d48add67224c9dd1db, type: 2}
+  m_BakingSkyUniqueID: 2
+--- !u!114 &1803900474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803900472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: ce720a739215a9d48add67224c9dd1db, type: 2}
+--- !u!4 &1803900475
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1803900472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2135674131
 GameObject:
