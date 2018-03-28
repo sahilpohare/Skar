@@ -1,49 +1,112 @@
-﻿using System.Collections;
+﻿
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Skar{
+[RequireComponent(typeof(StatesManager))]
 public class PlayerMovement : MonoBehaviour {
+    
+    [Serializable]
+    public class AdvancedSettings
+    {
+        public float shellOffset = .1f;
+        public float groundCheckDistance = .06f;
+        public LayerMask ignoredGrounds;
+    }
+    
 
+    public AdvancedSettings advancedSettings_Access = new AdvancedSettings();
+    public StatesManager states;
+    public InputManager ih;
     public float speed = 5;
     public float jumpForce = 10;
+    [Range(0,1)]
+    public float _rotSpeed = .4f;
+    public int midAirJumps = 1;
     public float rotationSpeed = 15;
-
-    public float XSensitivity = 2f;
-    public float YSensitivity = 2f;
-
-    [SerializeField] private Camera playerCam;
-    [SerializeField] private Transform V_camAnchor;
-    [SerializeField] private Transform H_camAnchor;
-    public float cameraDistance = 10;
+    public float groundedDrag = 10;
+    [SerializeField] float timeTillNextJump = .5f;
+    private float jumpTime;
+    private float currentNumberOfJumps;
 
     Vector3 moveDirection;
 
     Rigidbody rigidbody;
+
     CapsuleCollider playerCollider;
+    private bool onGround;
+    public bool midairControl;
 
     // Use this for initialization
     void Start () {
-        if(playerCam == null)
-        {
-            playerCam = Camera.main;
-        }
-        V_camAnchor.position = transform.position;
         rigidbody = GetComponent<Rigidbody>();
+        rigidbody.drag = groundedDrag;
         playerCollider = GetComponentInChildren<CapsuleCollider>();
-    }
-
-    private void Update()
-    {
-        V_camAnchor.position = transform.position;
-        RotateCamera(GetMouseMovement());
+        states = GetComponent<StatesManager>();
+        ih = FindObjectOfType<InputManager>();
     }
 
     private void FixedUpdate()
     {
-        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        CheckGround();
+        AirborneCheck();
+      if(states.CanMove){
+        if(midairControl)
         {
-            GetMoveDirection(GetInput());
-            if(Input.GetButton("Horizontal") && Input.GetButton("Vertical"))
+            ExecuteMovement();
+        }
+        else
+        {
+            if(onGround)
+            {
+                ExecuteMovement();
+            } 
+        }
+      }
+    }
+
+    Vector2 GetInput()
+    {
+        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    }
+
+    void GetMoveDirection(Vector2 input, Transform camAnchor)
+    {
+        Vector3 v;
+        Vector3 h;
+        v = camAnchor.forward;
+        h = camAnchor.right;
+        v.y = 0;
+        h.y = 0;
+        moveDirection = (v * input.y + h * input.x).normalized;
+    }
+
+    void RotateToMoveDirection(Vector3 direction)
+    {
+        Quaternion desiredRot = Quaternion.LookRotation(direction);
+		transform.rotation = Quaternion.Slerp(transform.rotation,desiredRot,_rotSpeed);
+    }
+
+    void Move(Vector3 direction)
+    {
+        if (rigidbody.velocity.magnitude < speed)
+        {
+            rigidbody.AddForce(direction * speed, ForceMode.Impulse);
+        }
+        else
+        {
+            rigidbody.velocity = new Vector3(direction.x * speed, rigidbody.velocity.y, direction.z * speed);
+        }
+    }
+
+    void ExecuteMovement()
+    {
+        if (ih.Vertical != 0 || ih.Horizontal != 0)
+        {
+            GetMoveDirection(GetInput(), Camera.main.transform);
+            if (ih.Horizontal != 0 && ih.Vertical != 0)
             {
                 RotateToMoveDirection(moveDirection);
                 Move(moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45));
@@ -54,59 +117,42 @@ public class PlayerMovement : MonoBehaviour {
                 Move(moveDirection);
             }
         }
-        Jump();
-        Debug.Log(rigidbody.velocity.magnitude);
-    }
-
-    Vector2 GetInput()
-    {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-    }
-
-    void GetMoveDirection(Vector2 input)
-    {
-        moveDirection = V_camAnchor.forward * input.y + V_camAnchor.right * input.x;
-    }
-
-    Vector2 GetMouseMovement()
-    {
-        return new Vector2(Input.GetAxis("Mouse X") * XSensitivity, Input.GetAxis("Mouse Y") * YSensitivity);
-    }
-
-    void RotateToMoveDirection(Vector3 direction)
-    {
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotationSpeed);
     }
 
     void CheckGround()
     {
-
+      onGround = states.isGrounded;
     }
 
-    void Move(Vector3 direction)
+    void AirborneCheck()
     {
-        if(rigidbody.velocity.magnitude < speed)
+        if(onGround)
         {
-            rigidbody.AddForce(direction * speed, ForceMode.VelocityChange);
+            rigidbody.drag = groundedDrag;
+            currentNumberOfJumps = 0;
+            Jump();
         }
         else
         {
-            rigidbody.velocity = direction * speed;
+            rigidbody.drag = 0;
+            if (currentNumberOfJumps < midAirJumps)
+            {
+                if(Time.time > jumpTime + timeTillNextJump)
+                {
+                    Jump();
+                }
+            }
         }
     }
 
     void Jump()
     {
-        if(Input.GetButtonDown("Jump"))
+        if (ih.Jump)
         {
             rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            jumpTime = Time.time;
+            currentNumberOfJumps++;
         }
     }
-
-    void RotateCamera(Vector2 mouseInput)
-    {
-        V_camAnchor.Rotate(0, mouseInput.x, 0, Space.Self);
-        H_camAnchor.Rotate(-mouseInput.y, 0, 0, Space.Self);
-    }
+ } 
 }
