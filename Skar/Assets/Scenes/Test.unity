@@ -754,6 +754,7 @@ MonoBehaviour:
   M2: 0
   mouseX: 0
   mouseY: 0
+  Jump: 0
 --- !u!95 &839190536
 Animator:
   serializedVersion: 3
@@ -783,9 +784,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b9de43f48b3c8469930ae850569fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canmove: 0
+  CanMove: 0
   isAttacking: 0
   isGrounded: 0
+  GroundcheckOffset: {x: 0, y: 0, z: 0}
+  gs:
+    shellOffset: 0.1
+    groundCheckDistance: 0.06
+    ignoredGrounds:
+      serializedVersion: 2
+      m_Bits: 0
 --- !u!1 &1350847378 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1446574277840156, guid: ca2a18daa91a3b04ca17d8b3c0c192d8,
