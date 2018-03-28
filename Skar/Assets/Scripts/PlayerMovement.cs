@@ -5,7 +5,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Skar{
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(InputManager))]
 [RequireComponent(typeof(StatesManager))]
+[RequireComponent(typeof(CapsuleCollider))]
 public class PlayerMovement : MonoBehaviour {
     
     [Serializable]
@@ -31,9 +34,9 @@ public class PlayerMovement : MonoBehaviour {
     private float jumpTime;
     private float currentNumberOfJumps;
 
-    Vector3 moveDirection;
+    public Vector3 moveDirection;
 
-    Rigidbody rigidbody;
+    public Rigidbody rigidbody;
 
     CapsuleCollider playerCollider;
     private bool onGround;
@@ -45,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
         rigidbody.drag = groundedDrag;
         playerCollider = GetComponentInChildren<CapsuleCollider>();
         states = GetComponent<StatesManager>();
-        ih = FindObjectOfType<InputManager>();
+        ih = InputManager.Init();
     }
 
     private void FixedUpdate()
@@ -67,21 +70,6 @@ public class PlayerMovement : MonoBehaviour {
       }
     }
 
-    Vector2 GetInput()
-    {
-        return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-    }
-
-    void GetMoveDirection(Vector2 input, Transform camAnchor)
-    {
-        Vector3 v;
-        Vector3 h;
-        v = camAnchor.forward;
-        h = camAnchor.right;
-        v.y = 0;
-        h.y = 0;
-        moveDirection = (v * input.y + h * input.x).normalized;
-    }
 
     void RotateToMoveDirection(Vector3 direction)
     {
@@ -105,16 +93,15 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (ih.Vertical != 0 || ih.Horizontal != 0)
         {
-            GetMoveDirection(GetInput(), Camera.main.transform);
             if (ih.Horizontal != 0 && ih.Vertical != 0)
             {
-                RotateToMoveDirection(moveDirection);
-                Move(moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45));
+                RotateToMoveDirection(ih.moveDirection);
+                Move(ih.moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45));
             }
             else
             {
-                RotateToMoveDirection(moveDirection);
-                Move(moveDirection);
+                RotateToMoveDirection(ih.moveDirection);
+                Move(ih.moveDirection);
             }
         }
     }
@@ -127,14 +114,17 @@ public class PlayerMovement : MonoBehaviour {
     void AirborneCheck()
     {
         if(onGround)
-        {
+        {   if(states.CanMove){
             rigidbody.drag = groundedDrag;
+            }
             currentNumberOfJumps = 0;
             Jump();
         }
         else
-        {
+        {  
+            if(states.CanMove){
             rigidbody.drag = 0;
+            }
             if (currentNumberOfJumps < midAirJumps)
             {
                 if(Time.time > jumpTime + timeTillNextJump)
