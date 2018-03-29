@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{2281D8A6-A025-4F76-A975-15F183186BFC}" SchemaVersion="69">
+<WwiseDocument Type="WorkUnit" ID="{2281D8A6-A025-4F76-A975-15F183186BFC}" SchemaVersion="85">
 	<AudioObjects>
 		<WorkUnit Name="Factory Crankcase REV" ID="{2281D8A6-A025-4F76-A975-15F183186BFC}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="De Tomaso Pantera" ID="{C772F814-BE08-45AD-8C7E-D6E8ED519F16}" ShortID="416857007" Type="SoundFX">
+				<Sound Name="De Tomaso Pantera" ID="{C772F814-BE08-45AD-8C7E-D6E8ED519F16}" ShortID="416857007">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -69,13 +69,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{9AAB77EC-988A-44E4-A4E5-90BC95F37708}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Dodge Challenger Sixpack 1970" ID="{D948DFE5-6E16-4C52-BC03-3616AF0EA9E9}" ShortID="150009007" Type="SoundFX">
+				<Sound Name="Dodge Challenger Sixpack 1970" ID="{D948DFE5-6E16-4C52-BC03-3616AF0EA9E9}" ShortID="150009007">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -129,13 +129,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{797BE742-368B-41FE-840B-2D3E64438782}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Dodge Challenger Sixpack 1970 v2" ID="{470DC1A4-C7E5-4A4D-B7BD-67521802186D}" ShortID="201838790" Type="SoundFX">
+				<Sound Name="Dodge Challenger Sixpack 1970 v2" ID="{470DC1A4-C7E5-4A4D-B7BD-67521802186D}" ShortID="201838790">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -192,13 +192,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{458D724D-A341-4C32-A22C-0706DB1E4676}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Dodge Viper" ID="{3A525D01-9D9A-4E8D-A878-86C22441C3BD}" ShortID="820294391" Type="SoundFX">
+				<Sound Name="Dodge Viper" ID="{3A525D01-9D9A-4E8D-A878-86C22441C3BD}" ShortID="820294391">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -248,13 +248,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{D73E7FDC-F7D7-444C-A063-A45D8FBA1CF4}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Ferrari 430" ID="{217E07AE-1810-468D-9870-8DF138573A3C}" ShortID="687655140" Type="SoundFX">
+				<Sound Name="Ferrari 430" ID="{217E07AE-1810-468D-9870-8DF138573A3C}" ShortID="687655140">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -305,13 +305,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{992828FE-6F5B-458D-81A4-1B87E7FB3481}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Ferrari 575M" ID="{FF08C9D1-0735-43B4-9716-EA85010B5888}" ShortID="965314255" Type="SoundFX">
+				<Sound Name="Ferrari 575M" ID="{FF08C9D1-0735-43B4-9716-EA85010B5888}" ShortID="965314255">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -361,13 +361,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{940756C3-7BA5-4D79-A74B-B59E6B88795B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Ford Mustang" ID="{9CEA4F0D-2C18-4026-A4B9-A68FB739C948}" ShortID="182543709" Type="SoundFX">
+				<Sound Name="Ford Mustang" ID="{9CEA4F0D-2C18-4026-A4B9-A68FB739C948}" ShortID="182543709">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -427,13 +427,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{8AFC8C72-7D06-4553-9AC5-BBB7B681D145}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Ford RS200" ID="{5D171BFE-1F0B-4357-9E3C-2703B6300F87}" ShortID="477531236" Type="SoundFX">
+				<Sound Name="Ford RS200" ID="{5D171BFE-1F0B-4357-9E3C-2703B6300F87}" ShortID="477531236">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -486,13 +486,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{C4DE3E1D-3782-40CA-A2D3-B16DFE28A8D7}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Honda Civic" ID="{8D3BC953-9075-4E3F-A96F-D43A0FAE2EA0}" ShortID="197509398" Type="SoundFX">
+				<Sound Name="Honda Civic" ID="{8D3BC953-9075-4E3F-A96F-D43A0FAE2EA0}" ShortID="197509398">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -549,13 +549,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{7C74912A-8322-4241-9B32-AEFFC1B19B3F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Honda NSX 1991" ID="{2EB6CE9B-5B07-4A41-BAC8-62FCBD70FAA9}" ShortID="825579407" Type="SoundFX">
+				<Sound Name="Honda NSX 1991" ID="{2EB6CE9B-5B07-4A41-BAC8-62FCBD70FAA9}" ShortID="825579407">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -599,13 +599,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{C5D03645-DA4C-490C-AE50-1996CE9F4A4B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Mazda RX8 2006" ID="{9588D673-F1BA-4D04-A322-E49C43A16F61}" ShortID="417523139" Type="SoundFX">
+				<Sound Name="Mazda RX8 2006" ID="{9588D673-F1BA-4D04-A322-E49C43A16F61}" ShortID="417523139">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -659,13 +659,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{A04B42B9-B6E0-4E0A-9A62-6E375E83562E}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Mazda RX8 2006 v2" ID="{DC925477-38A2-4B1A-BE80-D68205E1A612}" ShortID="484967285" Type="SoundFX">
+				<Sound Name="Mazda RX8 2006 v2" ID="{DC925477-38A2-4B1A-BE80-D68205E1A612}" ShortID="484967285">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -717,13 +717,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{CD9DDE7A-0530-445F-B861-39EA6F8924A3}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Nissan 370z" ID="{802342FC-0032-491C-8427-29F33353D890}" ShortID="788761149" Type="SoundFX">
+				<Sound Name="Nissan 370z" ID="{802342FC-0032-491C-8427-29F33353D890}" ShortID="788761149">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -774,13 +774,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{D88E21C3-8FB0-48F8-9F44-DDDDDF0B8F11}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Pontiac Grand Prix" ID="{69313331-5866-4FD3-B27D-97BF4E7133A5}" ShortID="709613845" Type="SoundFX">
+				<Sound Name="Pontiac Grand Prix" ID="{69313331-5866-4FD3-B27D-97BF4E7133A5}" ShortID="709613845">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -836,13 +836,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{B54BF901-80E0-467F-989B-FB6D551BBC13}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Porsche 997" ID="{6826E743-92F5-4F3E-9C54-592123B682D8}" ShortID="91498290" Type="SoundFX">
+				<Sound Name="Porsche 997" ID="{6826E743-92F5-4F3E-9C54-592123B682D8}" ShortID="91498290">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -886,13 +886,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{FFE1864E-C681-42A1-9B3C-B25D17C64145}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Toyota GT86" ID="{32DED91C-3029-438B-BC71-92A84CA0D582}" ShortID="557710576" Type="SoundFX">
+				<Sound Name="Toyota GT86" ID="{32DED91C-3029-438B-BC71-92A84CA0D582}" ShortID="557710576">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -945,13 +945,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{851B9A1B-F541-4E63-86EC-47CF071C2FEA}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Volkswagen Golf VR6 2004" ID="{712E34CB-8642-41F4-BDC8-AE934B722619}" ShortID="854712458" Type="SoundFX">
+				<Sound Name="Volkswagen Golf VR6 2004" ID="{712E34CB-8642-41F4-BDC8-AE934B722619}" ShortID="854712458">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1008,13 +1008,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{38DF141A-3DED-4F97-BCA0-35A2A630A0B4}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Acura Integra 1992" ID="{BBEDF96C-BEEE-4516-B744-F13C8DDEEBF9}" ShortID="567542855" Type="SoundFX">
+				<Sound Name="Acura Integra 1992" ID="{BBEDF96C-BEEE-4516-B744-F13C8DDEEBF9}" ShortID="567542855">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1069,13 +1069,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{55E5CFC4-83B1-47EF-9316-34C6E160AB92}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Alfa Romeo 8C Competizione" ID="{FEBCED66-CCC7-4ACB-9970-9D3C9FAD4040}" ShortID="682227697" Type="SoundFX">
+				<Sound Name="Alfa Romeo 8C Competizione" ID="{FEBCED66-CCC7-4ACB-9970-9D3C9FAD4040}" ShortID="682227697">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1133,13 +1133,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{DC5D531C-D786-4B6D-A86E-FE9E357810AC}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Audi R8" ID="{20D9F393-317B-4C27-AC2A-67D79E3FFF94}" ShortID="309642804" Type="SoundFX">
+				<Sound Name="Audi R8" ID="{20D9F393-317B-4C27-AC2A-67D79E3FFF94}" ShortID="309642804">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1194,13 +1194,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{647F57EB-74AD-476F-8DC0-848D1600C0A4}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Chevrolet Camaro Super Hugger" ID="{6BF4299B-921A-4872-A2F7-2F051E4986E6}" ShortID="193164496" Type="SoundFX">
+				<Sound Name="Chevrolet Camaro Super Hugger" ID="{6BF4299B-921A-4872-A2F7-2F051E4986E6}" ShortID="193164496">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1252,13 +1252,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{E6FC2FFE-D4B5-4186-B494-08A59A8CA360}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Chevrolet Corvette Z06 2006" ID="{D8C053F1-73A5-46B8-9989-031579A38ADC}" ShortID="682616904" Type="SoundFX">
+				<Sound Name="Chevrolet Corvette Z06 2006" ID="{D8C053F1-73A5-46B8-9989-031579A38ADC}" ShortID="682616904">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1309,13 +1309,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{89180BD4-36ED-463D-BCA3-1C571C39006B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Chevrolet Corvette Z06 2006 v2" ID="{7492EB66-544D-402A-8A24-DE6B013051D8}" ShortID="357117518" Type="SoundFX">
+				<Sound Name="Chevrolet Corvette Z06 2006 v2" ID="{7492EB66-544D-402A-8A24-DE6B013051D8}" ShortID="357117518">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1367,13 +1367,13 @@
 						<ActiveSource Name="CrankcaseAudio REV" ID="{E8D63140-ECE7-4E0D-9BE0-D1FDD62867A9}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Chevrolet Camaro SS" ID="{A124402C-0D2C-4A6D-B3E3-586EDB73E4B9}" ShortID="187295068" Type="SoundFX">
+				<Sound Name="Chevrolet Camaro SS" ID="{A124402C-0D2C-4A6D-B3E3-586EDB73E4B9}" ShortID="187295068">
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{4DD83488-A1FC-47E8-96ED-50E527E68DA6}"/>
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B87854-4846-4FB8-A81D-D779FF141DFF}"/>
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
