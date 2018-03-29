@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour {
 	public float _moveSpeed = 10f;
 	[Range(0,1)]
 	public float _rotSpeed = .5f;
-	InputManager ih;
 	// Use this for initialization
 	void Start () {
 		Init();
@@ -23,7 +22,6 @@ public class Movement : MonoBehaviour {
 	}
 	void Init (){
 		rb = GetComponent<Rigidbody>();
-		ih = FindObjectOfType<InputManager>();
 		rb.constraints = RigidbodyConstraints.FreezeRotation;
 		rb.drag = 5;
 	}
