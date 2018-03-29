@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace Skar{
-[RequireComponent(typeof(PlayerMovement))]
-[RequireComponent(typeof(InputManager))]
-[RequireComponent(typeof(StatesManager))]
+
 public class AbilitesManager : MonoBehaviour {
     PlayerMovement movl;
-	InputManager ih;
 	StatesManager st;
+    Rigidbody rigidbody;
     [Header("Dash")]
 	public bool canDash = true;
 	public float dashtime = .5f;
@@ -17,40 +14,48 @@ public class AbilitesManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		movl = GetComponent<PlayerMovement>();
-		ih = InputManager.Init();
 		st = GetComponent<StatesManager>();
+        rigidbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(ih.Dash){
+		if(Input.GetButtonDown("Dash"))
+        {
 			StartCoroutine(Dash());
 		}
-		if(isInDash){
-			if(!st.isGrounded){
-			    movl.rigidbody.useGravity = false;
+		if(isInDash)
+        {
+			if(!st.isGrounded)
+            {
+                rigidbody.useGravity = false;
+                rigidbody.drag = 0;
 			}
-			movl.rigidbody.drag = 10f;	
+            else
+            {
+                rigidbody.drag = movl.movementSettings.groundedDrag;
+            }
 		}
 		else
 		{
-		   movl.rigidbody.useGravity = true;
+            rigidbody.useGravity = true;
 		}
 	}
 	IEnumerator Dash(){
 		Vector3 dir;
-		if(ih.moveDirection != Vector3.zero){
-			dir = ih.moveDirection;
-		}else{
+		if(movl.inputSettings.GetMoveDirection(movl.inputSettings.GetInput(), Camera.main.transform) != Vector3.zero)
+        {
+		    dir = movl.inputSettings.GetMoveDirection(movl.inputSettings.GetInput(), Camera.main.transform);
+		}else
+        {
 			dir = transform.forward;
 		}
 
 		st.CanMove = false;
 		isInDash = true;
-		movl.rigidbody.AddForce(dir * dashspeed,ForceMode.VelocityChange);
+        rigidbody.AddForce(dir * dashspeed,ForceMode.VelocityChange);
 		yield return new WaitForSeconds(dashtime);
 		isInDash = false;
 		st.CanMove = true;
 	}
-  }
 }
