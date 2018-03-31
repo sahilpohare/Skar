@@ -39,11 +39,12 @@ public class AbilitesManager : MonoBehaviour {
 		if(movl.inputSettings.GetMoveDirection(movl.inputSettings.GetInput(), Camera.main.transform) != Vector3.zero)
         {
 		    dir = movl.inputSettings.GetMoveDirection(movl.inputSettings.GetInput(), Camera.main.transform);
+			movl.RotateToMoveDirection(dir,8.1f);
 		}else
         {
 			dir = transform.forward;
 		}
-
+        
 		st.CanMove = false;
 		st.moveState = StatesManager.MoveState.isInDash;
 		isInDash = true;

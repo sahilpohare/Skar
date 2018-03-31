@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour {
         public float speed = 5;
         public float jumpForce = 10;
         public int midAirJumps = 1;
+        [Range(0,1)]
         public float rotationSpeed = .4f;
         public float groundedDrag = 10;
         public bool midairControl;
@@ -128,10 +129,10 @@ public class PlayerMovement : MonoBehaviour {
            rigidbody.AddForce(Vector3.down * 9.81f * gravityMultiplier);
        }
     }
-    void RotateToMoveDirection(Vector3 direction)
+    public void RotateToMoveDirection(Vector3 direction , float speed )
     {
         Quaternion desiredRot = Quaternion.LookRotation(direction);
-	    transform.rotation = Quaternion.Slerp(transform.rotation,desiredRot, movementSettings.rotationSpeed);
+	    transform.rotation = Quaternion.Slerp(transform.rotation,desiredRot, speed);
     }
 
     void Move(Vector3 direction)
@@ -154,12 +155,12 @@ public class PlayerMovement : MonoBehaviour {
             moveDirection = inputSettings.GetMoveDirection(inputSettings.GetInput(), Camera.main.transform);
             if (Mathf.Abs(inputSettings.horizontal) > 0 && Mathf.Abs(inputSettings.vertical) > 0)
             {
-                RotateToMoveDirection(moveDirection);
+                RotateToMoveDirection(moveDirection,movementSettings.rotationSpeed);
                 Move(Vector3.ProjectOnPlane( (moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45)) , groundHit.normal));
             }
             else
             {
-                RotateToMoveDirection(moveDirection);
+                RotateToMoveDirection(moveDirection,movementSettings.rotationSpeed);
                 Move(moveDirection);
             }
         }
