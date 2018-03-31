@@ -69,29 +69,32 @@ public class PlayerMovement : MonoBehaviour {
     {
         public float shellOffset = .1f;
         public float groundCheckDistance = .06f;
+        public Vector3 groundCheckoffset;
         public LayerMask ignoredGrounds;
     }
 
     public InputSettings inputSettings = new InputSettings();
     public MovementSettings movementSettings = new MovementSettings();
     public AdvancedSettings advancedSettings = new AdvancedSettings();
+    AbilitesManager abilites;
     public StatesManager states;
     [Range(0,1)]
 
     Rigidbody rigidbody;
     CapsuleCollider playerCollider;
-    [SerializeField] Transform colliderCenter;
     private bool onGround;
 
-
+    RaycastHit groundHit;
+    public float gravityMultiplier = 2;
     // Use this for initialization
     void Start () {
         inputSettings.CursorSettings(inputSettings.showCursor, inputSettings.lockState);
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.drag = movementSettings.groundedDrag;
         playerCollider = GetComponentInChildren<CapsuleCollider>();
-        colliderCenter.localPosition = playerCollider.center;
+
         states = GetComponent<StatesManager>();
+        abilites = GetComponent<AbilitesManager>();
     }
 
     private void Update()
@@ -104,7 +107,7 @@ public class PlayerMovement : MonoBehaviour {
         inputSettings.GetAxis();
         CheckGround();
         AirborneCheck();
-
+        AddGravitaionalForce();
         if(states.CanMove)
         {
             if (movementSettings.midairControl)
@@ -120,7 +123,11 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
     }
-
+    void AddGravitaionalForce(){
+       if(rigidbody.useGravity){
+           rigidbody.AddForce(Vector3.down * 9.81f * gravityMultiplier);
+       }
+    }
     void RotateToMoveDirection(Vector3 direction)
     {
         Quaternion desiredRot = Quaternion.LookRotation(direction);
@@ -148,7 +155,7 @@ public class PlayerMovement : MonoBehaviour {
             if (Mathf.Abs(inputSettings.horizontal) > 0 && Mathf.Abs(inputSettings.vertical) > 0)
             {
                 RotateToMoveDirection(moveDirection);
-                Move(moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45));
+                Move(Vector3.ProjectOnPlane( (moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45)) , groundHit.normal));
             }
             else
             {
@@ -160,8 +167,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void CheckGround()
     {
-        RaycastHit hit;
-        if (Physics.SphereCast(colliderCenter.position, playerCollider.radius * (1 - advancedSettings.shellOffset), Vector3.down, out hit, ((playerCollider.height / 2) - playerCollider.radius) + advancedSettings.groundCheckDistance, ~advancedSettings.ignoredGrounds, QueryTriggerInteraction.Ignore))
+        
+        if (Physics.Raycast(transform.position + advancedSettings.groundCheckoffset, -Vector3.up,out groundHit,advancedSettings.groundCheckDistance,~advancedSettings.ignoredGrounds,QueryTriggerInteraction.Ignore))
         {
             onGround = true;
         }
@@ -181,8 +188,9 @@ public class PlayerMovement : MonoBehaviour {
             Jump();
         }
         else
-        {
+        {   if(!abilites.isInDash){
             rigidbody.drag = 0;
+        }
             if (currentNumberOfJumps < movementSettings.midAirJumps)
             {
                 if(Time.time > jumpTime + timeTillNextJump)

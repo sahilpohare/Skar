@@ -26,15 +26,8 @@ public class AbilitesManager : MonoBehaviour {
 		}
 		if(isInDash)
         {
-			if(!st.isGrounded)
-            {
-                rigidbody.useGravity = false;
-                rigidbody.drag = 0;
-			}
-            else
-            {
-                rigidbody.drag = movl.movementSettings.groundedDrag;
-            }
+          rigidbody.useGravity = false;
+          rigidbody.drag = movl.movementSettings.groundedDrag;
 		}
 		else
 		{
@@ -52,6 +45,7 @@ public class AbilitesManager : MonoBehaviour {
 		}
 
 		st.CanMove = false;
+		st.moveState = StatesManager.MoveState.isInDash;
 		isInDash = true;
         rigidbody.AddForce(dir * dashspeed,ForceMode.VelocityChange);
 		yield return new WaitForSeconds(dashtime);
