@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
             h = camAnchor.right;
             v.y = 0;
             h.y = 0;
-            return (v * input.y + h * input.x).normalized;
+            return (v * input.y + h * input.x);
         }
     }
 
@@ -78,10 +78,10 @@ public class PlayerMovement : MonoBehaviour {
     public MovementSettings movementSettings = new MovementSettings();
     public AdvancedSettings advancedSettings = new AdvancedSettings();
     AbilitesManager abilites;
-    public StatesManager states;
+    private StatesManager states;
     [Range(0,1)]
 
-    Rigidbody rigidbody;
+    Rigidbody rb;
     CapsuleCollider playerCollider;
     private bool onGround;
 
@@ -90,8 +90,8 @@ public class PlayerMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         inputSettings.CursorSettings(inputSettings.showCursor, inputSettings.lockState);
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.drag = movementSettings.groundedDrag;
+        rb = GetComponent<Rigidbody>();
+        rb.drag = movementSettings.groundedDrag;
         playerCollider = GetComponentInChildren<CapsuleCollider>();
 
         states = GetComponent<StatesManager>();
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour {
         CheckGround();
         AirborneCheck();
         AddGravitaionalForce();
-        if(states.CanMove)
+        if(states.moveState == StatesManager.MoveState.isMoving || states.moveState == StatesManager.MoveState.isJumping)
         {
             if (movementSettings.midairControl)
             {
@@ -125,8 +125,8 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
     void AddGravitaionalForce(){
-       if(rigidbody.useGravity){
-           rigidbody.AddForce(Vector3.down * 9.81f * gravityMultiplier);
+       if(rb.useGravity){
+           rb.AddForce(Vector3.down * 9.81f * gravityMultiplier);
        }
     }
     public void RotateToMoveDirection(Vector3 direction , float speed )
@@ -137,13 +137,13 @@ public class PlayerMovement : MonoBehaviour {
 
     void Move(Vector3 direction)
     {
-        if (rigidbody.velocity.magnitude < movementSettings.speed)
+        if (rb.velocity.magnitude < movementSettings.speed)
         {
-            rigidbody.AddForce(direction * movementSettings.speed * rigidbody.mass, ForceMode.Impulse);
+            rb.AddForce(direction * movementSettings.speed * rb.mass, ForceMode.Impulse);
         }
         else
         {
-            rigidbody.velocity = new Vector3(direction.x * movementSettings.speed, rigidbody.velocity.y, direction.z * movementSettings.speed);
+            rb.velocity = new Vector3(direction.x * movementSettings.speed, rb.velocity.y, direction.z * movementSettings.speed);
         }
     }
 
@@ -184,13 +184,13 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(onGround)
         {
-            rigidbody.drag = movementSettings.groundedDrag;
+            rb.drag = movementSettings.groundedDrag;
             currentNumberOfJumps = 0;
             Jump();
         }
         else
         {   if(!abilites.isInDash){
-            rigidbody.drag = 0;
+            rb.drag = 0;
         }
             if (currentNumberOfJumps < movementSettings.midAirJumps)
             {
@@ -206,7 +206,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump"))
         {
-            rigidbody.AddForce(transform.up * movementSettings.jumpForce * rigidbody.mass, ForceMode.Impulse);
+            rb.AddForce(transform.up * movementSettings.jumpForce * rb.mass, ForceMode.Impulse);
             jumpTime = Time.time;
             currentNumberOfJumps++;
         }

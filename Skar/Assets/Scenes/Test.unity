@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 315571260}
-  m_IndirectSpecularColor: {r: 0.3534881, g: 0.3252832, b: 0.21747877, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: cd6c777fed7ecdd4ab5318eb3dd59622, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: cd6c777fed7ecdd4ab5318eb3dd59622, type: 3}
   m_IsPrefabParent: 0
 --- !u!4 &144078664 stripped
@@ -11764,7 +11765,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 839190531}
-  - component: {fileID: 839190535}
   - component: {fileID: 839190537}
   - component: {fileID: 839190533}
   - component: {fileID: 839190532}
@@ -11836,17 +11836,6 @@ MonoBehaviour:
   dashtime: 0.49
   dashspeed: 40
   isInDash: 0
---- !u!114 &839190535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 839190530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9956095ee7c6e47a059e6aaafcc89a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &839190536
 Animator:
   serializedVersion: 3
@@ -11900,12 +11889,12 @@ MonoBehaviour:
     mouseX: 0
     mouseY: 0
   movementSettings:
-    speed: 5
+    speed: 12
     jumpForce: 10
     midAirJumps: 4
     rotationSpeed: 0.4
     groundedDrag: 10
-    midairControl: 0
+    midairControl: 1
   advancedSettings:
     shellOffset: 0.1
     groundCheckDistance: 0.06
@@ -11913,7 +11902,6 @@ MonoBehaviour:
     ignoredGrounds:
       serializedVersion: 2
       m_Bits: 0
-  states: {fileID: 0}
   gravityMultiplier: 2
 --- !u!1 &1350847378 stripped
 GameObject:
