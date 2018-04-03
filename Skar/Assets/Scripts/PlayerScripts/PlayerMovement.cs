@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
             h = camAnchor.right;
             v.y = 0;
             h.y = 0;
-            return (v * input.y + h * input.x).normalized;
+            return (v * input.y + h * input.x);
         }
     }
 
@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour {
         public float speed = 5;
         public float jumpForce = 10;
         public int midAirJumps = 1;
+        [Range(0,1)]
         public float rotationSpeed = .4f;
         public float groundedDrag = 10;
         public bool midairControl;
@@ -69,29 +70,32 @@ public class PlayerMovement : MonoBehaviour {
     {
         public float shellOffset = .1f;
         public float groundCheckDistance = .06f;
+        public Vector3 groundCheckoffset;
         public LayerMask ignoredGrounds;
     }
 
     public InputSettings inputSettings = new InputSettings();
     public MovementSettings movementSettings = new MovementSettings();
     public AdvancedSettings advancedSettings = new AdvancedSettings();
-    public StatesManager states;
+    AbilitesManager abilites;
+    private StatesManager states;
     [Range(0,1)]
 
-    Rigidbody rigidbody;
+    Rigidbody rb;
     CapsuleCollider playerCollider;
-    [SerializeField] Transform colliderCenter;
     private bool onGround;
 
-
+    RaycastHit groundHit;
+    public float gravityMultiplier = 2;
     // Use this for initialization
     void Start () {
         inputSettings.CursorSettings(inputSettings.showCursor, inputSettings.lockState);
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.drag = movementSettings.groundedDrag;
+        rb = GetComponent<Rigidbody>();
+        rb.drag = movementSettings.groundedDrag;
         playerCollider = GetComponentInChildren<CapsuleCollider>();
-        colliderCenter.localPosition = playerCollider.center;
+
         states = GetComponent<StatesManager>();
+        abilites = GetComponent<AbilitesManager>();
     }
 
     private void Update()
@@ -104,8 +108,8 @@ public class PlayerMovement : MonoBehaviour {
         inputSettings.GetAxis();
         CheckGround();
         AirborneCheck();
-
-        if(states.CanMove)
+        AddGravitaionalForce();
+        if(states.moveState == StatesManager.MoveState.isMoving || states.moveState == StatesManager.MoveState.isJumping)
         {
             if (movementSettings.midairControl)
             {
@@ -120,22 +124,26 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
     }
-
-    void RotateToMoveDirection(Vector3 direction)
+    void AddGravitaionalForce(){
+       if(rb.useGravity){
+           rb.AddForce(Vector3.down * 9.81f * gravityMultiplier);
+       }
+    }
+    public void RotateToMoveDirection(Vector3 direction , float speed )
     {
         Quaternion desiredRot = Quaternion.LookRotation(direction);
-	    transform.rotation = Quaternion.Slerp(transform.rotation,desiredRot, movementSettings.rotationSpeed);
+	    transform.rotation = Quaternion.Slerp(transform.rotation,desiredRot, speed);
     }
 
     void Move(Vector3 direction)
     {
-        if (rigidbody.velocity.magnitude < movementSettings.speed)
+        if (rb.velocity.magnitude < movementSettings.speed)
         {
-            rigidbody.AddForce(direction * movementSettings.speed * rigidbody.mass, ForceMode.Impulse);
+            rb.AddForce(direction * movementSettings.speed * rb.mass, ForceMode.Impulse);
         }
         else
         {
-            rigidbody.velocity = new Vector3(direction.x * movementSettings.speed, rigidbody.velocity.y, direction.z * movementSettings.speed);
+            rb.velocity = new Vector3(direction.x * movementSettings.speed, rb.velocity.y, direction.z * movementSettings.speed);
         }
     }
 
@@ -147,12 +155,12 @@ public class PlayerMovement : MonoBehaviour {
             moveDirection = inputSettings.GetMoveDirection(inputSettings.GetInput(), Camera.main.transform);
             if (Mathf.Abs(inputSettings.horizontal) > 0 && Mathf.Abs(inputSettings.vertical) > 0)
             {
-                RotateToMoveDirection(moveDirection);
-                Move(moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45));
+                RotateToMoveDirection(moveDirection,movementSettings.rotationSpeed);
+                Move(Vector3.ProjectOnPlane( (moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45)) , groundHit.normal));
             }
             else
             {
-                RotateToMoveDirection(moveDirection);
+                RotateToMoveDirection(moveDirection,movementSettings.rotationSpeed);
                 Move(moveDirection);
             }
         }
@@ -160,8 +168,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void CheckGround()
     {
-        RaycastHit hit;
-        if (Physics.SphereCast(colliderCenter.position, playerCollider.radius * (1 - advancedSettings.shellOffset), Vector3.down, out hit, ((playerCollider.height / 2) - playerCollider.radius) + advancedSettings.groundCheckDistance, ~advancedSettings.ignoredGrounds, QueryTriggerInteraction.Ignore))
+        
+        if (Physics.Raycast(transform.position + advancedSettings.groundCheckoffset, -Vector3.up,out groundHit,advancedSettings.groundCheckDistance,~advancedSettings.ignoredGrounds,QueryTriggerInteraction.Ignore))
         {
             onGround = true;
         }
@@ -176,13 +184,14 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(onGround)
         {
-            rigidbody.drag = movementSettings.groundedDrag;
+            rb.drag = movementSettings.groundedDrag;
             currentNumberOfJumps = 0;
             Jump();
         }
         else
-        {
-            rigidbody.drag = 0;
+        {   if(!abilites.isInDash){
+            rb.drag = 0;
+        }
             if (currentNumberOfJumps < movementSettings.midAirJumps)
             {
                 if(Time.time > jumpTime + timeTillNextJump)
@@ -197,7 +206,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (Input.GetButtonDown("Jump"))
         {
-            rigidbody.AddForce(transform.up * movementSettings.jumpForce * rigidbody.mass, ForceMode.Impulse);
+            rb.AddForce(transform.up * movementSettings.jumpForce * rb.mass, ForceMode.Impulse);
             jumpTime = Time.time;
             currentNumberOfJumps++;
         }
