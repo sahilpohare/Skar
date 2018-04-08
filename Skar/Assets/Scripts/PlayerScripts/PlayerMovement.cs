@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour {
         public float vertical;
         public float mouseX;
         public float mouseY;
-        public Vector3 moveDirection;
 
         public void CursorSettings(bool visibility, CursorLockMode lockState)
         {
@@ -152,18 +151,12 @@ public class PlayerMovement : MonoBehaviour {
     {
         Vector3 moveDirection;
         if (Mathf.Abs(inputSettings.horizontal) > 0 || Mathf.Abs(inputSettings.vertical) > 0)
-        {  
+        {
             moveDirection = inputSettings.GetMoveDirection(inputSettings.GetInput(), Camera.main.transform);
             if (Mathf.Abs(inputSettings.horizontal) > 0 && Mathf.Abs(inputSettings.vertical) > 0)
-            {   
-                Vector3 groundplane;
-                if(onGround){
-                    groundplane = groundHit.normal;
-                }else{
-                    groundplane = Vector3.up;
-                }
+            {
                 RotateToMoveDirection(moveDirection,movementSettings.rotationSpeed);
-                Move(Vector3.ProjectOnPlane( (moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45)) ,groundplane));
+                Move(Vector3.ProjectOnPlane( (moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45)) , groundHit.normal));
             }
             else
             {
