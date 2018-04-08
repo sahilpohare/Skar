@@ -29,10 +29,10 @@ public class StatesManager : MonoBehaviour {
 		if(abilitesManager.isInDash){
 			moveState = MoveState.isInDash;
 		}  
-		if(rb.velocity  == Vector3.zero && isGrounded && !isAttacking){
+		if(((Mathf.Abs(movl.inputSettings.horizontal) == 0 && Mathf.Abs(movl.inputSettings.vertical) == 0)) && isGrounded && !isAttacking){
 			moveState = MoveState.Idle;
 		}
-		if(rb.velocity.magnitude > 0 && !abilitesManager.isInDash && !isAttacking && isGrounded && CanMove){
+		if((Mathf.Abs(movl.inputSettings.horizontal) > 0 || Mathf.Abs(movl.inputSettings.vertical) > 0) && !abilitesManager.isInDash && !isAttacking && isGrounded && CanMove){
 			moveState = MoveState.isMoving;
 		}
 		if(!abilitesManager.isInDash && !isGrounded && !isAttacking){
