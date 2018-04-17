@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 315571260}
-  m_IndirectSpecularColor: {r: 0.35349175, g: 0.32528594, b: 0.21748108, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11896,8 +11896,9 @@ MonoBehaviour:
     groundedDrag: 10
     midairControl: 1
   advancedSettings:
-    groundCheckDistance: 0.1
-    groundCheckoffset: 0.1
+    shellOffset: 0.1
+    groundCheckDistance: 0.06
+    groundCheckoffset: {x: 0, y: 0, z: 0}
     ignoredGrounds:
       serializedVersion: 2
       m_Bits: 0

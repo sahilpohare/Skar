@@ -8,13 +8,12 @@ public class PlayerInteraction : MonoBehaviour {
     // public List<GameObject> interactables = new List<GameObject>();
     public float interactionRadius = 1.5f;
     public Collider[] interactables;
-    public LayerMask interctableLayers;
     public Interactable currentInteractable;
     int index;
 	
 	// Update is called once per frame
 	void Update () {
-        interactables = Physics.OverlapSphere(transform.position, interactionRadius, interctableLayers);
+        interactables = Physics.OverlapSphere(transform.position, interactionRadius, ~LayerMask.NameToLayer("Interactable"));
         AssignInteractable();
     }
 

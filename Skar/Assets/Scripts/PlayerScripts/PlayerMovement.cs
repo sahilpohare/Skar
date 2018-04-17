@@ -59,16 +59,16 @@ public class PlayerMovement : MonoBehaviour {
         public float rotationSpeed = .4f;
         public float groundedDrag = 10;
         public bool midairControl;
-        public bool lockOnOverride;
     }
 
     [SerializeField] float timeTillNextJump = .5f;
     private float jumpTime;
-    [SerializeField] private float currentNumberOfJumps;
+    private float currentNumberOfJumps;
 
     [Serializable]
     public class AdvancedSettings
     {
+        public float shellOffset = .1f;
         public float groundCheckDistance = .06f;
         public Vector3 groundCheckoffset;
         public LayerMask ignoredGrounds;
@@ -109,21 +109,24 @@ public class PlayerMovement : MonoBehaviour {
         CheckGround();
         AirborneCheck();
         AddGravitaionalForce();
-        if (movementSettings.midairControl)
+        if(states.moveState == StatesManager.MoveState.isMoving || states.moveState == StatesManager.MoveState.isJumping)
         {
-            ExecuteMovement();
-        }
-        else
-        {
-            if (onGround)
+            if (movementSettings.midairControl)
             {
                 ExecuteMovement();
+            }
+            else
+            {
+                if (onGround)
+                {
+                    ExecuteMovement();
+                }
             }
         }
     }
     void AddGravitaionalForce(){
        if(rb.useGravity){
-           rb.AddForce(Physics.gravity * gravityMultiplier);
+           rb.AddForce(Vector3.down * 9.81f * gravityMultiplier);
        }
     }
     public void RotateToMoveDirection(Vector3 direction , float speed )
@@ -152,24 +155,21 @@ public class PlayerMovement : MonoBehaviour {
             moveDirection = inputSettings.GetMoveDirection(inputSettings.GetInput(), Camera.main.transform);
             if (Mathf.Abs(inputSettings.horizontal) > 0 && Mathf.Abs(inputSettings.vertical) > 0)
             {
-                Move(Vector3.ProjectOnPlane((moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45)) , groundHit.normal));
+                RotateToMoveDirection(moveDirection,movementSettings.rotationSpeed);
+                Move(Vector3.ProjectOnPlane( (moveDirection * Mathf.Sin(Mathf.Deg2Rad * 45)) , groundHit.normal));
             }
             else
             {
+                RotateToMoveDirection(moveDirection,movementSettings.rotationSpeed);
                 Move(moveDirection);
-            }
-
-            if (!movementSettings.lockOnOverride)
-            {
-                RotateToMoveDirection(moveDirection, movementSettings.rotationSpeed);
             }
         }
     }
 
     void CheckGround()
     {
-        Debug.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - advancedSettings.groundCheckDistance, transform.position.z));
-        if (Physics.Raycast(transform.position + advancedSettings.groundCheckoffset, Vector3.down, out groundHit, advancedSettings.groundCheckDistance,~advancedSettings.ignoredGrounds,QueryTriggerInteraction.Ignore))
+        
+        if (Physics.Raycast(transform.position + advancedSettings.groundCheckoffset, -Vector3.up,out groundHit,advancedSettings.groundCheckDistance,~advancedSettings.ignoredGrounds,QueryTriggerInteraction.Ignore))
         {
             onGround = true;
         }
@@ -178,7 +178,6 @@ public class PlayerMovement : MonoBehaviour {
             onGround = false;
         }
         states.isGrounded = onGround;
-        Debug.DrawLine(transform.position, groundHit.point, Color.red);
     }
 
     void AirborneCheck()
@@ -190,13 +189,10 @@ public class PlayerMovement : MonoBehaviour {
             Jump();
         }
         else
-        {
-            if (!abilites.isInDash)
-            {
-                rb.drag = 0;
-            }
-
-            if (currentNumberOfJumps <= movementSettings.midAirJumps)
+        {   if(!abilites.isInDash){
+            rb.drag = 0;
+        }
+            if (currentNumberOfJumps < movementSettings.midAirJumps)
             {
                 if(Time.time > jumpTime + timeTillNextJump)
                 {
