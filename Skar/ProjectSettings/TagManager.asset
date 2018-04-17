@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Interactable
+  - Character
+  - Camera holder
+  - Lock-on target
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Ground
   - Player
   - Interactable
-  - 
+  - Character
   - 
   - 
   - 

@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4756751280062088}
-  m_Layer: 0
-  m_Name: Collider center
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: Lock-on target
+  m_TagString: Lock-on target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,11 +36,14 @@ GameObject:
   - component: {fileID: 4287895259766906}
   - component: {fileID: 136279043517472302}
   - component: {fileID: 54083529573733008}
-  - component: {fileID: 114182240260166968}
+  - component: {fileID: 114152975880134540}
   - component: {fileID: 114284595773751752}
-  - component: {fileID: 114874903882267840}
   - component: {fileID: 114439089364498706}
-  m_Layer: 0
+  - component: {fileID: 114942282342996482}
+  - component: {fileID: 114209154385839480}
+  - component: {fileID: 114326617956090050}
+  - component: {fileID: 114363821571917860}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -55,7 +58,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4926152254899924}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Meshes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +75,7 @@ GameObject:
   - component: {fileID: 4168038214241336}
   - component: {fileID: 33841808352095792}
   - component: {fileID: 23507728594853606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4998925918263626}
   - component: {fileID: 114301013136181134}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +108,7 @@ GameObject:
   - component: {fileID: 4729477009411578}
   - component: {fileID: 33863809825963388}
   - component: {fileID: 23068513298534770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1440685750152466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9.451827, y: 0, z: 0.6123417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4998925918263626}
@@ -161,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349935628085842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4287895259766906}
@@ -294,7 +297,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &114182240260166968
+--- !u!114 &114152975880134540
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -302,10 +305,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440685750152466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c6ea22d1e63eee4bb2b4900053e671a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6228b195587a39a4d8f341c9731ba2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeTillNextJump: 0.5
+  currentNumberOfJumps: 0
   inputSettings:
     showCursor: 0
     lockState: 1
@@ -319,15 +323,30 @@ MonoBehaviour:
     midAirJumps: 1
     rotationSpeed: 0.4
     groundedDrag: 10
-    midairControl: 1
+    midairControl: 0
+    lockOnOverride: 0
   advancedSettings:
-    shellOffset: 0.1
-    groundCheckDistance: 0.2
+    groundCheckDistance: 0.1
+    groundCheckoffset: {x: 0, y: 0.01, z: 0}
     ignoredGrounds:
       serializedVersion: 2
-      m_Bits: 0
-  states: {fileID: 0}
-  colliderCenter: {fileID: 4756751280062088}
+      m_Bits: 1024
+  gravityMultiplier: 2
+--- !u!114 &114209154385839480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440685750152466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530ee09585fe1d547aa91dff94a6c3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDash: 1
+  dashtime: 0.5
+  dashspeed: 10
+  isInDash: 0
 --- !u!114 &114284595773751752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,6 +361,7 @@ MonoBehaviour:
   CanMove: 1
   isAttacking: 0
   isGrounded: 1
+  moveState: 0
 --- !u!114 &114301013136181134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -357,6 +377,31 @@ MonoBehaviour:
   consumables: []
   keyItems: []
   weaponry: []
+--- !u!114 &114326617956090050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440685750152466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d112da92f25c6124e8e951573e3bf8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamName: 
+  teamIndex: 0
+--- !u!114 &114363821571917860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1440685750152466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d1aa8218e4e754e937d20404d89ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockOnTarget: {fileID: 0}
 --- !u!114 &114439089364498706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,8 +415,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionRadius: 2
   interactables: []
+  interctableLayers:
+    serializedVersion: 2
+    m_Bits: 2048
   currentInteractable: {fileID: 0}
---- !u!114 &114874903882267840
+--- !u!114 &114942282342996482
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -379,13 +427,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440685750152466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d247f102229a9cc4c85d9ae931d0def3, type: 3}
+  m_Script: {fileID: 11500000, guid: fa2b16e3b4fd87547a2924eb7a51dcc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canDash: 1
-  dashtime: 0.5
-  dashspeed: 10
-  isInDash: 0
+  lockOnTarget: {fileID: 0}
+  bluh: {fileID: 0}
+  charactersColliders: []
+  overlapSphereRadius: 20
+  lockOnTargetLayers:
+    serializedVersion: 2
+    m_Bits: 4096
+  lockOnIgnoredLayers:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!136 &136279043517472302
 CapsuleCollider:
   m_ObjectHideFlags: 1
