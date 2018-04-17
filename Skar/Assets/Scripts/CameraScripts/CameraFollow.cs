@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
     public Transform Target;
-	[Range(0,1)]
-	public float speed;
+	[Range(0,01)]
+	public float speed = 0.125f;
 	public Vector3 Offset;
 	private Vector3 currentpos;
 	// Use this for initialization
@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	void FixedUpdate () {
 		Follow();
 	}
 
@@ -27,5 +27,6 @@ public class CameraFollow : MonoBehaviour {
 	void Follow()
     {
 		transform.position = Vector3.SmoothDamp(transform.position,Target.position + Offset,ref currentpos,speed);
+        //transform.position = Vector3.Lerp(transform.position,Target.position,speed);	
 	}
 }

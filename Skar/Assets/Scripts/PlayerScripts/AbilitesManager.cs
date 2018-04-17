@@ -20,18 +20,19 @@ public class AbilitesManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Dash"))
-        {
-			StartCoroutine(Dash());
-		}
+	
 		if(isInDash)
         {
-          rb.useGravity = false;
-          rb.drag = movl.movementSettings.groundedDrag;
+          
 		}
 		else
 		{
-            rb.useGravity = true;
+           
+		}
+
+		if(Input.GetButtonDown("Dash"))
+        {
+			StartCoroutine(Dash());
 		}
 	}
 	IEnumerator Dash(){
@@ -48,8 +49,11 @@ public class AbilitesManager : MonoBehaviour {
 		st.CanMove = false;
 		st.moveState = StatesManager.MoveState.isInDash;
 		isInDash = true;
+		rb.useGravity = false;
+        rb.drag = movl.movementSettings.groundedDrag;
         rb.AddForce(dir * dashspeed,ForceMode.VelocityChange);
 		yield return new WaitForSeconds(dashtime);
+		rb.useGravity = true;
 		isInDash = false;
 		st.CanMove = true;
 	}
