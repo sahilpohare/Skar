@@ -38,12 +38,26 @@ public class PlayerLockOn : MonoBehaviour {
 
         if(lockOnTarget != null)
         {
+<<<<<<< HEAD
             bluh.position = lockOnTarget.position; //For debugging purposes
+=======
+            if(bluh != null)
+            {
+                bluh.position = lockOnTarget.position; //For debugging purposes
+            }
+>>>>>>> 687fde0686cdb70b5e8c6fd95ea3bbd6ef84d783
             RotateToLockOn();
         }
         else
         {
+<<<<<<< HEAD
             bluh.position = Vector3.zero; //For debugging purposes
+=======
+            if (bluh != null)
+            {
+                bluh.position = Vector3.zero; //For debugging purposes
+            }
+>>>>>>> 687fde0686cdb70b5e8c6fd95ea3bbd6ef84d783
             playerMovement_Access.movementSettings.lockOnOverride = false;
         }
     }
