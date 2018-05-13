@@ -17,6 +17,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_CityMusic" ID="{16D5EFD5-9525-464B-9CF4-FC0A6B47E5F3}">
+					<ChildrenList>
+						<Action Name="" ID="{8657E244-49DC-43A1-9A6D-96D421D0DD06}" ShortID="68617711">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="City" ID="{AE54A8C5-844B-4DD8-959E-4183C3436D9C}" WorkUnitID="{2F5F0D71-A72D-437D-A5D0-8D8335D88CEE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

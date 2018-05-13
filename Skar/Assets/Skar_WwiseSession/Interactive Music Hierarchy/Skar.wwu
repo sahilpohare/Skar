@@ -174,6 +174,176 @@
 						</MusicPlaylistItem>
 					</Playlist>
 				</MusicPlaylistContainer>
+				<MusicPlaylistContainer Name="City" ID="{AE54A8C5-844B-4DD8-959E-4183C3436D9C}" ShortID="813646760">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="141"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="7"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="City Intro" ID="{2EC7EA06-6044-40DD-8949-40E120DE34BE}" ShortID="505639303">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="38723.4240362812"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="City Intro" ID="{437F9398-506A-46C9-8441-05672E3EF5FB}" ShortID="109278999">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="City Intro" ID="{124BF395-5767-44D3-A79D-516F490520AB}" ShortID="830480837">
+											<Language>SFX</Language>
+											<AudioFile>City Intro.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{F0F498BE-4D81-4FF4-9CBC-45408357323F}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{27F87118-74F2-4A21-B603-F45B7F593EFC}">
+											<ClipList>
+												<MusicClip Name="City Intro" ID="{C22FD8C7-1044-4E80-B0AD-07A7DCEA0732}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="38723.4240362812"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="City Intro" ID="{124BF395-5767-44D3-A79D-516F490520AB}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{088F4B93-D414-4B12-8893-D3CBB2BDF9CC}"/>
+								<MusicCue Name="Exit Cue" ID="{7625F9ED-A552-4BA9-AE8C-77FF650FC6DD}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="35744.6808510638"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+						<MusicSegment Name="City Loop" ID="{A4604322-6631-4BE8-8E94-BDAF31C2DFF2}" ShortID="718111428">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="116170.220002895"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{41154F72-818D-448D-93AE-8BB83C1C55C4}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="City Loop" ID="{CBF7B25D-06D3-46D9-B2BB-8BBABDE00AEB}" ShortID="387828909">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{6665B393-8F63-4051-A891-0C0A530C14F8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="City Loop" ID="{51066CD3-3FBC-4FAE-BD4E-909CAE1A60FC}" ShortID="999289640">
+											<Language>SFX</Language>
+											<AudioFile>City Loop.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{A904FEE3-5C47-4A07-9E82-8F9A963CB364}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{F33CB77E-EC4B-49DC-ADEA-190C0162BC0B}">
+											<ClipList>
+												<MusicClip Name="City Loop" ID="{B0EAED62-46BA-413B-ACC9-E310D5225D57}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="113191.496598639"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="City Loop" ID="{51066CD3-3FBC-4FAE-BD4E-909CAE1A60FC}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{3DDDA953-80F2-4018-879E-8650F5246CB3}">
+									<PropertyList>
+										<Property Name="TimeMs" Type="Real64" Value="2978.72340425532"/>
+									</PropertyList>
+								</MusicCue>
+								<MusicCue Name="Exit Cue" ID="{977316F1-169C-4C47-BC68-124EC370EC37}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="110212.765957447"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{5EBECC92-CC57-46DA-BCDD-C303DBF43B8C}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{881F6AAC-11B2-4C71-8858-A6606E283489}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{023E2553-A6B3-4293-9DC6-91E3F9D03CBD}" ShortID="188876611">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{2AE49588-07E5-4B96-BD40-BBA80201EF93}" ShortID="696947804">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="City Intro" ID="{2EC7EA06-6044-40DD-8949-40E120DE34BE}"/>
+								</MusicPlaylistItem>
+								<MusicPlaylistItem Name="" ID="{4A841BC2-35CD-4B03-8CED-02E06BB59D37}" ShortID="486176623">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="City Loop" ID="{A4604322-6631-4BE8-8E94-BDAF31C2DFF2}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>

@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	41944552	Play_CityMusic			\Skar_Music\Play_CityMusic	
 	3373521485	Play_FS_Dirt			\Test_Events\Play_FS_Dirt	
 	3926520445	Play_BattleMusic			\Skar_Music\Play_BattleMusic	
 
@@ -11,7 +12,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	606611187	FS_Dirt_L_04	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\FS_Dirt_L_04_53CEE377.wem		\Actor-Mixer Hierarchy\Test_unit\FS_Dirt\FS_Dirt_L\FS_Dirt_L_04		67136
 	718985986	FS_Dirt_L_05	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\FS_Dirt_L_05_53CEE377.wem		\Actor-Mixer Hierarchy\Test_unit\FS_Dirt\FS_Dirt_L\FS_Dirt_L_05		30528
 	767605388	FS_Dirt_R_04	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\FS_Dirt_R_04_53CEE377.wem		\Actor-Mixer Hierarchy\Test_unit\FS_Dirt\FS_Dirt_R\FS_Dirt_R_04		59200
+	830480837	City Intro	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\City Intro_9452F465.wem		\Interactive Music Hierarchy\Skar\City\City Intro\City Intro		6830876
 	838839171	Battle loop 84 1in 2out	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\Battle loop 84 1in 2out_9452F465.wem		\Interactive Music Hierarchy\Skar\Battle\Battle_loop_84_1in_2out\Battle loop 84 1in 2out		10584064
 	964813075	FS_Dirt_L_03	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\FS_Dirt_L_03_53CEE377.wem		\Actor-Mixer Hierarchy\Test_unit\FS_Dirt\FS_Dirt_L\FS_Dirt_L_03		47936
+	999289640	City Loop	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\City Loop_9452F465.wem		\Interactive Music Hierarchy\Skar\City\City Loop\City Loop		19967044
 	1025793749	FS_Dirt_L_02	C:\Users\Presley\Documents\GitHub\Skar-vendattagames\Skar\Assets\Skar_WwiseSession\.cache\Mac\SFX\FS_Dirt_L_02_53CEE377.wem		\Actor-Mixer Hierarchy\Test_unit\FS_Dirt\FS_Dirt_L\FS_Dirt_L_02		52288
 

@@ -22,6 +22,7 @@
 			<Path>Skar_MainSoundBank.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3926520445" Name="Play_BattleMusic" ObjectPath="\Events\Skar_Music\Play_BattleMusic"/>
+				<Event Id="41944552" Name="Play_CityMusic" ObjectPath="\Events\Skar_Music\Play_CityMusic"/>
 				<Event Id="3373521485" Name="Play_FS_Dirt" ObjectPath="\Events\Test_Events\Play_FS_Dirt"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
@@ -57,6 +58,10 @@
 					<ShortName>FS_Dirt_R_04.wav</ShortName>
 					<Path>SFX\FS_Dirt_R_04_53CEE377.wem</Path>
 				</File>
+				<File Id="830480837" Language="SFX">
+					<ShortName>City Intro.wav</ShortName>
+					<Path>SFX\City Intro_9452F465.wem</Path>
+				</File>
 				<File Id="838839171" Language="SFX">
 					<ShortName>Battle loop 84 1in 2out.wav</ShortName>
 					<Path>SFX\Battle loop 84 1in 2out_9452F465.wem</Path>
@@ -64,6 +69,10 @@
 				<File Id="964813075" Language="SFX">
 					<ShortName>FS_Dirt_L_03.wav</ShortName>
 					<Path>SFX\FS_Dirt_L_03_53CEE377.wem</Path>
+				</File>
+				<File Id="999289640" Language="SFX">
+					<ShortName>City Loop.wav</ShortName>
+					<Path>SFX\City Loop_9452F465.wem</Path>
 				</File>
 				<File Id="1025793749" Language="SFX">
 					<ShortName>FS_Dirt_L_02.wav</ShortName>
